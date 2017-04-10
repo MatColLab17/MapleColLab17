@@ -1,0 +1,18 @@
+NULL;
+f := (x)->x^(x/1-x);
+
+singular(f(x));
+
+iscont(f(x), x = 0 .. 1, 'open');
+
+iscont(f(x), x = 1 .. infinity, 'open');
+
+iscont(f(x), x = -infinity .. 0, 'open');
+
+limit(f(x), x = 0);
+
+limit(f(x), x = 1);
+
+limit(f(x), x = infinity);
+
+plot(f(x));
