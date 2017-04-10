@@ -1,0 +1,10 @@
+f := (x) -> x^3 - cos(x^2)*sin(x);
+
+#remplacer 'Pi' par une autre fraction ou réel (aux alentours de 3~4)
+plot(f(x), x=-Pi..Pi);
+
+#On doit trouver les 3 zeros de f
+#remplacer 'Pi' par une autre fraction ou réel
+fsolve(f(x)=0, x=-Pi..Pi); 
+fsolve(f(x)=0, x=-Pi..0);
+fsolve(f(x)=0, x=0..Pi);
