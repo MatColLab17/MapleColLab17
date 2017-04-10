@@ -1,6 +1,6 @@
 # MapleColLab17
 
-Collaboration pour le labo 3
+Collaboration pour les labos
 
 Règles d'utilisation :
 
