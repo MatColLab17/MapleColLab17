@@ -1,0 +1,11 @@
+#Ex1.1
+#define recurrence
+rec := {b(n+2)+b(n) = 1, b(0) = 2, b(1) = 1}
+#use rsolve
+sol := rsolve(rec, b)
+#create sequence [0, 1, .., 10]
+L:=[seq(k, k = 0 .. 10)] 
+#evaluate the solved recurrence with each element of the sequence
+simplify(eval~(sol,n=~L))
+
+#Ex1.2
