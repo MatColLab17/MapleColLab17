@@ -1,11 +1,23 @@
 #Ex1.1
 #define recurrence
-rec := {b(n+2)+b(n) = 1, b(0) = 2, b(1) = 1}
+rec := {b(n+2)+b(n)=1, b(0)=2, b(1)=1}
 #use rsolve
 sol := rsolve(rec, b)
-#create sequence [0, 1, .., 10]
-L:=[seq(k, k = 0 .. 10)] 
+#create sequence [0, 1,.., 10]
+L:=[seq(k,k=0..10)] 
 #evaluate the solved recurrence with each element of the sequence
 simplify(eval~(sol,n=~L))
 
 #Ex1.2
+#define recurrence
+rec := {c(n+3)-3*c(n+2)-2*c(n+1)-3*c(n)=2+12*n+12*3^n, c(0)=2, c(1)=6, c(2)=22}
+#use rsolve
+sol := rsolve(rec, c)
+#create sequence [0, 1,.., 10]
+L := [seq(k, k=0..10)]
+#evaluate the solved recurrence with each element of the sequence, with evalf because values are floating point
+simplify(evalf(eval~(sol, n=~L)))
+
+
+
+#Do not copy this code, rather use it for inspiration.
