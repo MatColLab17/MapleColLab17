@@ -1,0 +1,16 @@
+#Ex1.1
+#define recurrence
+req := {a(n+1)=3*a(n)-2*b(n), b(n+1)=3*a(n)-b(n), a(1)=1, b(1)=1}
+#use rsolve
+sol:= rsolve(req, {a,b})
+#create sequence [0, 1,.., 12]
+L := [seq(k, k=0..12)]
+#evaluate the solved recurrence with each element of the sequence, with evalf because values are floating point
+#first are evaluated values for a
+simplify(evalf(eval~(sol[1], n=~L)))
+#then are evaluated values for b
+simplify(evalf(eval~(sol[2], n=~L)))
+
+
+
+#Do not copy this code, rather use it for inspiration.
