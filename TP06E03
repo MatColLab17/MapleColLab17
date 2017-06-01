@@ -1,0 +1,38 @@
+#Exercice 3
+
+> restart; # Pas optionnel, juste pour assurer qu'on commence avec rien.
+
+#Tentative avec rsolve...
+#Le definition du systeme
+> system1 := {x(n+1)-x(n) = max(round(.3e-1*(2*x(n)-5*y(n))), -x(n)), y(n+1)-y(n) = max(round(-.3e-1*y(n)*(20-.1e-1*x(n))), -y(n)), x(0) = 1000, y(0) = 200};
+
+#On essaye rsolve avec le systeme
+> rsolve(system1, {x, y});
+#On constate que rsolve ne donne pas de resultat.
+
+#La procedure du systeme.
+> proced1 := proc(m)  
+  local i; #Le compteur du boucle  
+  global x; #On declare les variables globales pour sauvegarder les resutats
+  global y;  
+  x(0):=1000; #Valeurs initiales
+  y(0) := 200;  
+  for i from 0 by 1 to m do #`Un boucle pour evaluer les x et y`  
+  x(i+1):= evalf(eval(max(round(0.03*(2*x(n)-5*y(n))),-x(n))+x(n), n=i)); #Calculation des elements 
+  y(i+1):=evalf(eval(max(round(-0.03*y(n)*(20- .01* x(n))),-y(n))+y(n), n=i));   
+  end do #Terminer le boucle  
+ end proc #Terminer la procedure;
+
+> p1(49); # Executer la procedure
+
+> for i from 0 to 50 do x(i) end do;
+#Quand les predateurs devient trop nombreux, les proies devient eteint.
+
+> for i from 0 to 50 do y(i) end do;
+#Les predateurs s'eteint a la fin mais plus lantement que les proies.
+
+
+Note:
+Eviter le plagiat!
+Essayez de ne pas recopier aucune partie de ce document, juste utilisez le pour comprendre mieux l'exercice,
+ou juste reformulez le.
